@@ -1,75 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mahdi Miri — Data Scientist</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahdi Miri - Data Scientist</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a2e0e6e6d1.js" crossorigin="anonymous"></script>
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="style.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
 
-  <!-- App script -->
-  <script src="app.js" defer></script>
+    <!-- Scripts -->
+    <script src="neuralBackground.js" defer></script>
+    <script src="app.js" defer></script>
 </head>
 <body>
-  <!-- Theme toggle placed near top for accessibility -->
-  <header class="topbar">
-    <div class="brand">
-      <img class="mini-avatar" src="assets/images/profile.jpg" alt="Mahdi Miri" onerror="this.style.display='none'">
-      <div class="brand-text">
-        <span class="name">Mahdi Miri</span>
-        <span class="role">Data Scientist</span>
-      </div>
-    </div>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </button>
 
-    <div class="controls">
-      <!-- Theme toggle button -->
-      <button id="theme-toggle" aria-label="Toggle theme" class="theme-btn">
-        <!-- icons are inline SVG -->
-        <svg id="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.76 4.84l-1.8-1.79L3.17 5.84l1.79 1.8 1.8-2.8zM1 13h3v-2H1v2zm10 9h-2v-3h2v3zm7.04-2.46l1.79 1.79 1.79-1.79-1.79-1.79-1.79 1.79zM20 11v2h3v-2h-3zM4.24 19.66l1.79-1.79-1.79-1.79L2.45 17.87l1.79 1.79zM12 6a6 6 0 100 12 6 6 0 000-12z"/></svg>
-        <svg id="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M21.64 13.05A9 9 0 1110.95 2.36 7 7 0 0021.64 13.05z"/></svg>
-      </button>
-      <!-- Download CV / Contact quick links -->
-      <a id="download-cv" class="btn" href="#" download>Download CV</a>
-      <a id="contact-cta" class="btn primary" href="mailto:mahdimiri7@gmail.com">Hire Me</a>
-    </div>
-  </header>
+    <!-- Animated Neural Network Background -->
+    <canvas id="neural-bg"></canvas>
 
-  <!-- animated gradient background layers -->
-  <div class="bg-layer"></div>
-  <div class="bg-layer overlay"></div>
-
-  <main class="container" id="main-content" role="main">
-    <!-- Sections populated by JS -->
-    <section id="about-container" class="section"></section>
-    <section id="projects-container" class="section"></section>
-    <section id="experience-container" class="section"></section>
-    <section id="skills-container" class="section"></section>
-    <section id="education-container" class="section"></section>
-    <section id="contact-container" class="section"></section>
-  </main>
-
-  <!-- Fallback JSON (used when fetch fails e.g. file://) -->
-  <script id="fallback-data" type="application/json">
-  {
-    "about": {
-      "firstname": "Mahdi",
-      "lastname": "Miri",
-      "jobTitle": "Data Scientist",
-      "description": "I am a Data Scientist currently pursuing my Master's degree in Naples, Italy. I specialize in NLP, Deep Learning and integrating models into production.",
-      "image": "assets/images/profile.jpg",
-      "socialLinks": [
-        { "icon": "location", "value": "Naples - Italy" },
-        { "icon": "phone", "value": "+39 3517867567", "link": "tel:+393517867567" },
-        { "icon": "mail", "value": "mahdimiri7@gmail.com", "link": "mailto:mahdimiri7@gmail.com" },
-        { "icon": "linkedin", "value": "mahdimi-miri-dev", "link": "https://www.linkedin.com/in/mahdimi-miri-dev" },
-        { "icon": "github", "value": "Mahdi-Miri", "link": "https://github.com/Mahdi-Miri" }
-      ]
-    }
-  }
-  </script>
+    <!-- Main Resume Content -->
+    <main class="container">
+        <section id="about-container"></section>
+        <section id="projects-container"></section>
+        <section id="experience-container"></section>
+        <section id="skills-container"></section>
+        <section id="education-container"></section>
+        <section id="contact-container"></section>
+    </main>
 </body>
 </html>
+

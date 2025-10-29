@@ -1,219 +1,179 @@
-/* ============================
-   Purple Neon Theme — style.css
-   ============================
-   Comments are in English.
-*/
+/* ==========================================
+   Purple Tech-Themed Resume Style
+   ========================================== */
 
-/* -------------- variables -------------- */
-:root{
-  --font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  --gap: 1.25rem;
-
-  /* Light theme palette (base) */
-  --bg-1: #0f0726; /* deep midnight for overlay base */
-  --bg-2: #120926; 
-  --card-bg: rgba(255,255,255,0.03);
-  --glass: rgba(255,255,255,0.04);
-  --text: #eae6f8;
-  --muted: #cfc7f0;
-
-  /* Accent neon purples */
-  --accent: #9b5cff;
-  --accent-2: #6b1cff;
-  --accent-3: #d49bff;
-
-  --radius: 12px;
-  --shadow: 0 8px 30px rgba(8,5,20,0.6);
-  --glass-border: rgba(255,255,255,0.06);
+/* --- 1. Root Variables --- */
+:root {
+  /* Dark Theme (Default) */
+  --bg-dark: #0e002b;
+  --bg-card: rgba(255, 255, 255, 0.08);
+  --primary: #a855f7;
+  --primary-light: #d8b4fe;
+  --text-light: #ffffff;
+  --text-muted: #c4b5fd;
+  --border-radius: 14px;
 }
 
-/* Light mode overrides (when .light-theme on body) */
-body.light-theme {
-  --bg-1: #f6f1fb;
-  --bg-2: #efe9f9;
-  --card-bg: rgba(255,255,255,0.85);
-  --glass: rgba(255,255,255,0.9);
-  --text: #221132;
-  --muted: #5b4a6b;
-  --shadow: 0 6px 20px rgba(16,12,35,0.08);
-  --glass-border: rgba(0,0,0,0.06);
+/* Light Theme */
+:root[data-theme="light"] {
+  --bg-dark: #f8f9fa;
+  --bg-card: rgba(0, 0, 0, 0.05);
+  --primary: #7828c8;
+  --primary-light: #9750dd;
+  --text-light: #1a1a1a;
+  --text-muted: #666666;
 }
 
-/* -------------- global -------------- */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family:var(--font-family);
-  color:var(--text);
-  background: linear-gradient(135deg, var(--bg-1), var(--bg-2));
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  min-height:100%;
-  overflow-x:hidden;
+/* --- 2. General Layout --- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  overflow-x: hidden;
 }
 
-/* background animated layers */
-.bg-layer{
-  position:fixed; inset:0; z-index:-2;
-  background: radial-gradient(1000px 600px at 10% 20%, rgba(155,92,255,0.12), transparent 8%),
-              radial-gradient(800px 500px at 90% 80%, rgba(107,28,255,0.08), transparent 8%);
-  pointer-events:none;
-  filter: blur(30px);
-  transform: translateZ(0);
-  animation: floatBG 18s linear infinite;
-}
-.bg-layer.overlay{
-  background: linear-gradient(90deg, rgba(107,28,255,0.08), rgba(155,92,255,0.06) 50%, rgba(213,155,255,0.03));
-  mix-blend-mode: overlay;
-  animation-duration: 28s;
-  opacity: 0.85;
+/* Fullscreen Canvas for background animation */
+#neural-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
 }
 
-/* floating animation */
-@keyframes floatBG {
-  0%{ transform: translate3d(-10px,-20px,0) scale(1) }
-  50%{ transform: translate3d(10px,20px,0) scale(1.03) }
-  100%{ transform: translate3d(-10px,-20px,0) scale(1) }
+/* Centered main container */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem 0;
 }
 
-/* top bar */
-.topbar{
-  position:sticky; top:0; z-index:40;
-  display:flex; align-items:center; justify-content:space-between;
-  padding: 0.6rem 1.25rem;
-  backdrop-filter: blur(6px);
-  background: linear-gradient(180deg, rgba(0,0,0,0.16), transparent);
-  border-bottom: 1px solid var(--glass-border);
+/* --- 3. Card Design --- */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.1);
+  backdrop-filter: blur(10px);
+  animation: fadeUp 0.6s ease;
 }
 
-/* brand */
-.brand{ display:flex; align-items:center; gap:0.75rem; }
-.mini-avatar{ width:44px; height:44px; border-radius:50%; object-fit:cover; border:2px solid rgba(255,255,255,0.06) }
-.brand-text .name{ display:block; font-weight:700; font-size:0.95rem; color:var(--text) }
-.brand-text .role{ display:block; font-size:0.78rem; color:var(--muted) }
-
-/* controls */
-.controls{ display:flex; gap:0.6rem; align-items:center }
-.btn{
-  display:inline-flex; align-items:center; gap:0.5rem;
-  padding:0.45rem 0.8rem; border-radius:10px; font-weight:600;
-  background:transparent; color:var(--text); text-decoration:none; border:1px solid transparent;
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-.btn:hover{ transform:translateY(-2px) }
-.btn.primary{
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  color:white; box-shadow: 0 8px 24px rgba(107,28,255,0.18);
-}
-.theme-btn{
-  display:inline-grid; place-items:center;
-  width:40px; height:36px; border-radius:10px; background:var(--card-bg);
-  border:1px solid var(--glass-border); cursor:pointer; color:var(--text);
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* icon show/hide */
-#icon-sun{ display:none }
-body.light-theme #icon-sun{ display:inline }
-body.light-theme #icon-moon{ display:none }
-body:not(.light-theme) #icon-moon{ display:inline }
-
-/* container */
-.container{
-  max-width:1100px;
-  margin: 2rem auto;
-  padding: 1rem;
-  display:grid;
-  grid-template-columns: 1fr 360px;
-  gap: 1.5rem;
+h1, h2, h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-light);
 }
 
-/* main content spans both columns on small screens */
-@media (max-width:1000px){
-  .container{ grid-template-columns: 1fr; padding: 1rem }
+h2 {
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-/* left column (content) */
-.section{ margin-bottom:1.25rem; }
-
-/* card */
-.card{
-  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border-radius: var(--radius);
-  padding:1.25rem;
-  box-shadow: var(--shadow);
-  border:1px solid var(--glass-border);
-  transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s ease;
-}
-.card:hover{ transform: translateY(-6px) }
-
-/* About area: make it span left column and show image in right column */
-#about-container{ grid-column: 1 / -1; display:flex; gap:1.25rem; align-items:center; flex-wrap:wrap }
-.about-left{ flex:1; min-width:280px }
-.about-right{ width:260px; display:flex; justify-content:center; align-items:center; }
-
-/* profile image style */
-.profile-img{
-  width:220px; height:220px; border-radius:18px; object-fit:cover;
-  border: 5px solid rgba(155,92,255,0.14); box-shadow:0 12px 30px rgba(107,28,255,0.12);
+/* --- 4. About Section --- */
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
 }
 
-/* headings */
-h1{ margin:0; font-size:2rem; letter-spacing:0.2px }
-h2{ margin:0.25rem 0 0.8rem; font-size:1rem; color:var(--muted); font-weight:600 }
-
-/* grid helpers */
-.grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap:1rem }
-@media (max-width:640px){ .grid-2{ grid-template-columns: 1fr } }
-
-/* skills tags */
-.skill-tag{
-  display:inline-block; padding:0.35rem 0.6rem; border-radius:999px;
-  background: linear-gradient(90deg, rgba(155,92,255,0.12), rgba(107,28,255,0.06));
-  color:var(--text); font-weight:600; margin:0.25rem 0.4rem 0 0;
-  border:1px solid rgba(155,92,255,0.05);
+.about-image img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid var(--primary);
+  box-shadow: 0 0 25px var(--primary);
+  animation: pulse 3s infinite;
+  object-fit: cover;
 }
 
-/* timeline */
-.timeline .card{ margin-bottom:0.9rem }
-
-/* right column (sidebar) */
-@media (min-width:1001px){
-  .container > :not(#about-container):not(#main-content) {}
-}
-.sidebar{
-  position:relative;
-  display:flex; flex-direction:column; gap:1rem;
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 25px var(--primary); }
+  50% { box-shadow: 0 0 45px var(--primary-light); }
 }
 
-/* contact CTA box in sidebar */
-.contact-box{ text-align:center; padding:1.25rem; border-radius:12px; background: linear-gradient(90deg, rgba(155,92,255,0.06), rgba(107,28,255,0.03)); border:1px solid var(--glass-border) }
-.contact-box h3{ margin:0.2rem 0 0.6rem; color:var(--text) }
-.contact-box p{ color:var(--muted); font-size:0.95rem }
-
-/* small utilities */
-.meta{ color:var(--muted); font-size:0.9rem; margin-bottom:.6rem }
-
-/* card titles */
-.card h3{ margin:0 0 0.5rem }
-.card p{ color:var(--muted); line-height:1.5 }
-
-/* footer spacing */
-footer{ margin:2rem 0 4rem; text-align:center; color:var(--muted) }
-
-/* small animations for entrance */
-@keyframes revealUp {
-  from{ opacity:0; transform:translateY(8px) }
-  to{ opacity:1; transform:none }
-}
-.card{ animation: revealUp .5s ease both }
-
-/* small responsive tweaks for header controls */
-@media (max-width:640px){
-  .controls .btn{ display:none }
-  .brand-text .role{ display:none }
+.about-content {
+  flex: 1;
 }
 
-/* accessibility focus */
-button:focus, a:focus{ outline:3px solid rgba(155,92,255,0.18); outline-offset:2px; border-radius:8px }
+.social-buttons {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.social-btn {
+  background: var(--primary);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+.social-btn:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+/* --- 5. Skill & Project Tags --- */
+.skill-tag {
+  background: rgba(168, 85, 247, 0.2);
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: var(--primary-light);
+  font-weight: 500;
+}
+
+/* --- 6. Timeline --- */
+.timeline .card {
+  margin-bottom: 1.5rem;
+}
+
+/* --- 7. Theme Toggle Button --- */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--primary);
+  color: var(--text-light);
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  background: var(--primary-light);
+}
+
+/* --- 8. Contact Section --- */
+.contact-section {
+  text-align: center;
+}
 
