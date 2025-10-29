@@ -1,150 +1,131 @@
 {
-	"about": {
-		"firstname": "Mahdi",
-		"lastname": "Miri",
-		"jobTitle": "Data Scientist",
-		"description": "I am a Data Scientist currently pursuing my Master's degree in Naples, Italy. With a strong foundation in both Data Science and Computer Engineering, I specialize in building end-to-end machine learning solutions. My expertise lies in Natural Language Processing (NLP), Deep Learning, and statistical analysis. I have practical experience in developing models for tasks like sentiment analysis and spam detection, optimizing neural networks, and researching LLM vulnerabilities. My background as a Back-End and Web Developer gives me a unique perspective on integrating these complex models into real-world applications. I am passionate about leveraging data to solve challenging problems and am currently seeking freelance opportunities.",
-		"image": "assets/images/profile.jpg",
-		"socialLinks": [
-			{
-				"icon": "location",
-				"value": "Naples - Italy "
-			},
-			{
-				"icon": "phone",
-				"value": "+39 3517867567",
-				"link": "tel: +39 3517867567"
-			},
-			{
-				"icon": "mail",
-				"value": "mahdimiri7@gmail.com",
-				"link": "mailto: mahdimiri7@gmail.com"
-			},
-			{
-				"icon": "linkedin",
-				"value": "mahdimi-miri-dev",
-				"link": "https://www.linkedin.com/in/mahdimi-miri-dev"
-			},
-			{
-				"icon": "github",
-				"value": "Mahdi-Miri",
-				"link": "https://github.com/Mahdi-Miri"
-			}
-		]
-	},
-	"projects": {
-		"items": [
-			{
-				"title": "IMDB Sentiment Analysis Pipeline",
-				"description": "A Python pipeline for cleaning and preprocessing movie reviews (removing HTML, normalization, and stemming) for sentiment analysis models.",
-				"role": "Data Preprocessing",
-				"link": "Git Link",
-				"hardSkills": [
-					{ "title": "Pandas" },
-					{ "title": "NLTK" }
-				]
-			},
-			{
-				"title": "Spam Text Detection Model",
-				"description": "Classifies SMS spam using TF-IDF and a Naive Bayes model. Evaluated with Accuracy and Recall metrics.",
-				"role": "Machine Learning",
-				"link": "Git Link",
-				"hardSkills": [
-					{ "title": "Pandas" },
-					{ "title": "NLTK" },
-					{ "title": "Scikit-learn" }
-				]
-			},
-			{
-				"title": "NN Hyperparameter Tuning",
-				"description": "Optimizes a Keras neural network by comparing GridSearchCV and RandomizedSearchCV methods.",
-				"role": "Model Optimization",
-				"link": "Git Link",
-				"hardSkills": [
-					{ "title": "Scikit-learn" },
-					{ "title": "TensorFlow" },
-					{ "title": "Keras" }
-				]
-			}
-		]
-	},
-	"works": {
-		"title": "Professional Experience",
-		"items": [
-			{
-				"title": "University of Naples Federico II",
-				"description": "Researched LLM vulnerabilities using adversarial prompting and jailbreak strategies to improve model robustness and Responsible AI.",
-				"date": {
-					"start": "2025",
-					"finish": "2025"
-				},
-				"jobTitle": "Internship in research on LLM",
-				"hardSkills": [
-					{ "title": "Python" },
-					{ "title": "LLM" }
-				]
-			},
-			{
-				"title": "GoaLearn",
-				"description": "Engineered and optimized backend systems using PHP/Laravel and SQL, improving performance by 65% and stability by 20%.",
-				"date": {
-					"start": "2021",
-					"finish": "2022"
-				},
-				"jobTitle": "Back-End DEVELOPER",
-				"hardSkills": [
-					{ "title": "PHP" },
-					{ "title": "Laravel" },
-					{ "title": "SQL" }
-				]
-			}
-		]
-	},
-	"hardSkills": {
-		"title": "Hard Skills",
-		"items": [
-			{ "title": "Python" },
-			{ "title": "R" },
-			{ "title": "Machine-Learning" },
-			{ "title": "Deep-Learning" },
-			{ "title": "LLms" },
-			{ "title": "Git" },
-			{ "title": "Html" },
-			{ "title": "CSS" }
-		]
-	},
-	"softSkills": {
-		"title": "Soft Skills",
-		"items": [
-			"Communication skills",
-			"Organizing skills",
-			"Teamwork",
-			"Accuracy",
-			"Punctuality",
-			"Creativity"
-		]
-	},
-	"education": {
-		"title": "Educational History",
-		"items": [
-			{
-				"name": "University of Naples Federico II",
-				"grade": "Master's Degree",
-				"science": "Data Science",
-				"date": {
-					"start": "2023",
-					"finish": "2026"
-				}
-			},
-			{
-				"name": "Islamic Azad University of Isfahan",
-				"grade": "Bachelor's Degree",
-				"science": "Computer Engineering",
-				"date": {
-					"start": "2019",
-					"finish": "2022"
-				}
-			}
-		]
-	}
+  "about": {
+    "firstname": "Mahdi",
+    "lastname": "Miri",
+    "jobTitle": "Data Scientist",
+    "description": "I am a Data Scientist currently pursuing my Master's degree in Naples, Italy. With a strong foundation in both Data Science and Computer Engineering, I specialize in building end-to-end machine learning solutions. My expertise lies in NLP, Deep Learning, and statistical analysis. I have experience integrating models into production and developing robust evaluation pipelines.",
+    "image": "assets/images/profile.jpg",
+    "socialLinks": [
+      {
+        "icon": "location",
+        "value": "Naples - Italy"
+      },
+      {
+        "icon": "phone",
+        "value": "+39 3517867567",
+        "link": "tel:+393517867567"
+      },
+      {
+        "icon": "mail",
+        "value": "mahdimiri7@gmail.com",
+        "link": "mailto:mahdimiri7@gmail.com"
+      },
+      {
+        "icon": "linkedin",
+        "value": "mahdimi-miri-dev",
+        "link": "https://www.linkedin.com/in/mahdimi-miri-dev"
+      },
+      {
+        "icon": "github",
+        "value": "Mahdi-Miri",
+        "link": "https://github.com/Mahdi-Miri"
+      }
+    ]
+  },
+  "projects": {
+    "items": [
+      {
+        "title": "IMDB Sentiment Analysis Pipeline",
+        "description": "A Python pipeline for cleaning and preprocessing movie reviews (removing HTML, normalization, and stemming) for sentiment analysis models.",
+        "role": "Data Preprocessing",
+        "link": "",
+        "hardSkills": [
+          { "title": "Pandas" },
+          { "title": "NLTK" }
+        ]
+      },
+      {
+        "title": "Spam Text Detection Model",
+        "description": "Classifies SMS spam using TF-IDF and a Naive Bayes model. Evaluated with Accuracy and Recall metrics.",
+        "role": "Machine Learning",
+        "link": "",
+        "hardSkills": [
+          { "title": "Pandas" },
+          { "title": "NLTK" },
+          { "title": "Scikit-learn" }
+        ]
+      },
+      {
+        "title": "NN Hyperparameter Tuning",
+        "description": "Optimizes a Keras neural network by comparing GridSearchCV and RandomizedSearchCV methods.",
+        "role": "Model Optimization",
+        "link": "",
+        "hardSkills": [
+          { "title": "Scikit-learn" },
+          { "title": "TensorFlow" },
+          { "title": "Keras" }
+        ]
+      }
+    ]
+  },
+  "works": {
+    "title": "Professional Experience",
+    "items": [
+      {
+        "title": "University of Naples Federico II",
+        "description": "Researched LLM vulnerabilities using adversarial prompting and jailbreak strategies to improve model robustness and Responsible AI.",
+        "date": { "start": "2025", "finish": "2025" },
+        "jobTitle": "Research Intern - LLM Vulnerabilities",
+        "hardSkills": [ { "title": "Python" }, { "title": "LLM" } ]
+      },
+      {
+        "title": "GoaLearn",
+        "description": "Engineered and optimized backend systems using PHP/Laravel and SQL, improving performance by 65% and stability by 20%.",
+        "date": { "start": "2021", "finish": "2022" },
+        "jobTitle": "Back-End Developer",
+        "hardSkills": [ { "title": "PHP" }, { "title": "Laravel" }, { "title": "SQL" } ]
+      }
+    ]
+  },
+  "hardSkills": {
+    "title": "Hard Skills",
+    "items": [
+      { "title": "Python" },
+      { "title": "R" },
+      { "title": "Machine Learning" },
+      { "title": "Deep Learning" },
+      { "title": "LLMs" },
+      { "title": "Git" },
+      { "title": "HTML" },
+      { "title": "CSS" }
+    ]
+  },
+  "softSkills": {
+    "title": "Soft Skills",
+    "items": [
+      "Communication",
+      "Organization",
+      "Teamwork",
+      "Accuracy",
+      "Punctuality",
+      "Creativity"
+    ]
+  },
+  "education": {
+    "title": "Educational History",
+    "items": [
+      {
+        "name": "University of Naples Federico II",
+        "grade": "Master's Degree",
+        "science": "Data Science",
+        "date": { "start": "2023", "finish": "2026" }
+      },
+      {
+        "name": "Islamic Azad University of Isfahan",
+        "grade": "Bachelor's Degree",
+        "science": "Computer Engineering",
+        "date": { "start": "2019", "finish": "2022" }
+      }
+    ]
+  }
 }
