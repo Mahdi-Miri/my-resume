@@ -1,18 +1,11 @@
-// Define interfaces for nested objects first
+// interfaces/resumeData.ts
+
+// --- Interfaces for nested objects ---
 
 export interface SocialLink {
   icon: string;
   value: string;
   link?: string;
-}
-
-export interface AboutData {
-  firstname: string;
-  lastname: string;
-  jobTitle: string;
-  description: string;
-  image: string;
-  socialLinks: SocialLink[];
 }
 
 export interface ProjectDate {
@@ -27,11 +20,11 @@ export interface ProjectSkill {
 export interface Project {
   title: string;
   description: string;
-  date?: ProjectDate; // Optional based on your new data
+  date?: ProjectDate; // Made optional
   role: string;
   icon: string;
   link: string;
-  hardSkills: ProjectSkill[];
+  hardSkills: ProjectSkill[]; // Matched to your new data
 }
 
 export interface WorkDate {
@@ -52,7 +45,7 @@ export interface Work {
   jobTitle: string;
   icon: string;
   link: string;
-  hardSkills: WorkSkill[];
+  hardSkills: WorkSkill[]; // Matched to your new data
 }
 
 export interface HardSkill {
@@ -72,7 +65,17 @@ export interface Education {
   date: EducationDate;
 }
 
-// Main ResumeData interface
+// --- Main ResumeData Interface ---
+
+export interface AboutData {
+  firstname: string;
+  lastname: string;
+  jobTitle: string;
+  description: string;
+  image: string;
+  socialLinks: SocialLink[];
+}
+
 export interface ResumeData {
   about: AboutData;
   projects: {
@@ -84,11 +87,11 @@ export interface ResumeData {
   };
   hardSkills: {
     title: string;
-    items: HardSkill[];
+    items: HardSkill[]; // Matched to your new data
   };
   softSkills: {
     title: string;
-    items: string[];
+    items: string[]; // Matched to your new data
   };
   education: {
     title: string;
