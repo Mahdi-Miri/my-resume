@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectsContainer = document.getElementById('projects-container');
     const experienceContainer = document.getElementById('experience-container');
     const skillsContainer = document.getElementById('skills-container');
-    const educationContainer = document.getElementById('education-container'); // <-- Added
+    const educationContainer = document.getElementById('education-container');
     const contactContainer = document.getElementById('contact-container');
 
-    // --- 2. Fetch data from JSON file ---
-    fetch('/resumeData.json')
+    // --- 2. Fetch data from JSON file (NO leading slash) ---
+    fetch('resumeData.json')
         .then(response => {
             if (!response.ok) {
                 // Throw an error if the file isn't found
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             renderProjects(data.projects);
             renderExperience(data.works);
             renderSkills(data.hardSkills, data.softSkills);
-            renderEducation(data.education); // <-- Added
+            renderEducation(data.education);
             renderContact(data.about);
         })
         .catch(error => {
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const socialLinksHTML = about.socialLinks.map(link => `
             <div class="social-link">
                 <strong>${link.icon}: </strong>
-                ${link.link ? `<a href="${link.link}" target="_blank">${link.value}</a>` : `<span>${link.value}</span>`}
+                ${link.link ? `<a href="${link.link}" target="_blank" rel="noopener noreferrer">${link.value}</a>` : `<span>${link.value}</span>`}
             </div>
         `).join(''); // .join('') converts the array into a single string
 
@@ -160,7 +160,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     }
 
-    // --- This function is new ---
     function renderEducation(education) {
         const educationHTML = education.items.map(edu => `
             <div class="card timeline-item">

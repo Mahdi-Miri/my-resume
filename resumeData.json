@@ -4,7 +4,7 @@
 		"lastname": "Miri",
 		"jobTitle": "Data Scientist",
 		"description": "I am a Data Scientist currently pursuing my Master's degree in Naples, Italy. With a strong foundation in both Data Science and Computer Engineering, I specialize in building end-to-end machine learning solutions. My expertise lies in Natural Language Processing (NLP), Deep Learning, and statistical analysis. I have practical experience in developing models for tasks like sentiment analysis and spam detection, optimizing neural networks, and researching LLM vulnerabilities. My background as a Back-End and Web Developer gives me a unique perspective on integrating these complex models into real-world applications. I am passionate about leveraging data to solve challenging problems and am currently seeking freelance opportunities.",
-		"image": "/assets/images/profile.jpg",
+		"image": "assets/images/profile.jpg",
 		"socialLinks": [
 			{
 				"icon": "location",
