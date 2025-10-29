@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactContainer = document.getElementById('contact-container');
 
     // --- 2. Fetch data from JSON file ---
-    fetch('resumeData.json')
+    fetch('/resumeData.json')
         .then(response => {
             if (!response.ok) {
                 // Throw an error if the file isn't found
