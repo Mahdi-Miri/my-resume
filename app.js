@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <h3>${about.jobTitle}</h3>
           <p>${about.description}</p>
           <div class="social-buttons">
-            <a class="social-btn" href="https://www.linkedin.com/in/mahdimi-miri-dev" target="_blank">
+            <a class="social-btn" href="https://www.linkedin.com/in/mahdi-miri-dev/" target="_blank">
               <i class="fab fa-linkedin"></i> LinkedIn
             </a>
             <a class="social-btn" href="https://github.com/Mahdi-Miri" target="_blank">
