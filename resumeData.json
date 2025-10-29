@@ -22,7 +22,13 @@
 			},
 			{
 				"icon": "linkedin",
-				"value": "mahdimi-miri-dev"
+				"value": "mahdimi-miri-dev",
+				"link": "https://www.linkedin.com/in/mahdimi-miri-dev"
+			},
+			{
+				"icon": "github",
+				"value": "Mahdi-Miri",
+				"link": "https://github.com/Mahdi-Miri"
 			}
 		]
 	},

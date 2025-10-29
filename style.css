@@ -1,35 +1,44 @@
 /* ==========================================
-  Glassmorphism Theme & Animated Background
+  Modern Light Theme & Animated Background
   ========================================== */
 
 /* --- 1. Variables --- */
 :root {
-  --bg-color-start: #1a1a2e; /* Dark Blue */
-  --bg-color-end: #1f0c3d;   /* Dark Purple */
-  --card-bg: rgba(255, 255, 255, 0.05); /* Semi-transparent white for glass */
-  --card-border: rgba(255, 255, 255, 0.2);
-  --text-color: #f0f0f0;     /* Light text for dark bg */
-  --secondary-color: #bbbbbb; /* Lighter gray for secondary text */
-  --primary-color: #00f5c3;   /* Bright Mint/Teal for accent */
-  --primary-color-dark: #000;
-  --border-radius: 12px;
-  --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  /* A bright, clean gradient */
+  --bg-color-1: #f0f4f8;
+  --bg-color-2: #e6e9f0;
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --secondary-color: #757575;
+  --border-color: #e0e0e0;
+  /* A strong, professional blue accent */
+  --primary-color: #007bff;
+  --primary-color-dark: #0056b3;
+  --primary-color-light: #e6f2ff;
+  --border-radius: 10px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 /* --- 2. Keyframes for Animations --- */
 
-/* Animated background gradient */
-@keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* A subtle, flowing gradient animation for the background */
+@keyframes animatedGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Fade-in animation for cards */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(15px);
   }
   to {
     opacity: 1;
@@ -45,38 +54,54 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: var(--text-color);
   line-height: 1.6;
-  
+
   /* The Animated Background */
-  background: linear-gradient(135deg, var(--bg-color-start), var(--bg-color-end));
-  background-size: 400% 400%; /* Makes the gradient movement slow */
-  animation: gradientAnimation 15s ease infinite;
+  background: linear-gradient(
+    135deg,
+    var(--bg-color-1),
+    var(--bg-color-2),
+    var(--bg-color-1)
+  );
+  background-size: 300% 300%;
+  animation: animatedGradient 12s ease infinite;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin-bottom: 0.75rem;
   font-weight: 600;
   color: var(--text-color);
 }
-h1 { font-size: 2.5rem; }
+h1 {
+  font-size: 2.5rem;
+}
 h2 {
   font-size: 2rem;
-  border-bottom: 2px solid var(--primary-color); /* Use accent color */
+  border-bottom: 2px solid var(--primary-color); /* Blue accent border */
   padding-bottom: 0.5rem;
   margin-top: 2rem;
   margin-bottom: 1.5rem;
 }
-h3 { font-size: 1.5rem; color: var(--primary-color); } /* Accent headings */
+h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color-dark); /* Dark blue for subheadings */
+}
 
 a {
-  color: var(--primary-color); /* Accent links */
+  color: var(--primary-color);
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.2s ease;
 }
-a:hover { text-decoration: underline; }
+a:hover {
+  text-decoration: underline;
+  color: var(--primary-color-dark);
+}
 
 /* --- 4. Layout & Card --- */
 .container {
@@ -89,16 +114,17 @@ section {
   margin-bottom: 2.5rem;
 }
 
-/* The Glass Card Effect */
+/* The Card Effect */
 .card {
   background: var(--card-bg);
-  backdrop-filter: blur(10px); /* This creates the "frosty glass" */
-  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  /* A very subtle glass effect on a light background */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   border-radius: var(--border-radius);
-  border: 1px solid var(--card-border);
+  border: 1px solid var(--border-color);
   box-shadow: var(--shadow);
   padding: 1.5rem 2rem;
-  
+
   /* Apply the fade-in animation */
   animation: fadeIn 0.5s ease-out;
 }
@@ -116,16 +142,25 @@ section {
   gap: 2rem;
   align-items: center;
 }
-.about-content { flex: 3; min-width: 300px; }
-.about-image { flex: 1; text-align: center; }
+.about-content {
+  flex: 3;
+  min-width: 300px;
+}
+.about-image {
+  flex: 1;
+  text-align: center;
+}
 .about-image img {
   width: 250px;
   height: 250px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--primary-color); /* Accent border */
+  border: 4px solid var(--primary-color); /* Blue accent border */
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
 }
-.social-links { margin-top: 1rem; }
+.social-links {
+  margin-top: 1rem;
+}
 .social-link {
   margin-bottom: 0.5rem;
   font-size: 0.95rem;
@@ -136,7 +171,10 @@ section {
   margin-right: 0.5rem;
   color: var(--text-color);
 }
-.social-link a { color: var(--primary-color); }
+.social-link a {
+  color: var(--primary-color);
+  font-weight: 600;
+}
 
 /* Tags & Badges */
 .skills-list {
@@ -146,8 +184,8 @@ section {
   margin-top: 1rem;
 }
 .skill-tag {
-  background: var(--primary-color);
-  color: var(--primary-color-dark); /* Dark text on bright bg */
+  background: var(--primary-color-light);
+  color: var(--primary-color-dark);
   padding: 0.25rem 0.75rem;
   border-radius: 15px;
   font-size: 0.85rem;
@@ -162,11 +200,14 @@ section {
   padding-left: 0.5rem;
   color: var(--secondary-color);
 }
-.soft-skills-list li { margin-bottom: 0.5rem; }
+.soft-skills-list li {
+  margin-bottom: 0.5rem;
+}
 
-.role-badge, .date-badge {
+.role-badge,
+.date-badge {
   display: inline-block;
-  background: rgba(255, 255, 255, 0.1); /* Lighter bg for badges */
+  background: #f0f0f0;
   color: var(--secondary-color);
   padding: 0.25rem 0.75rem;
   border-radius: 4px;
@@ -175,16 +216,21 @@ section {
   margin-bottom: 1rem;
 }
 .date-badge {
-    color: var(--primary-color);
-    background: rgba(0, 245, 195, 0.1); /* Faded accent bg */
+  color: var(--primary-color-dark);
+  background: var(--primary-color-light);
 }
 
 /* Contact Button */
 .contact-section {
   text-align: center;
-  /* It's a card like the others, no special bg */
+  background: var(--card-bg);
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.1);
 }
-.contact-section h2 { border-bottom: none; }
+.contact-section h2 {
+  border-bottom: none;
+  color: var(--primary-color-dark);
+}
 .contact-section p {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
@@ -192,7 +238,7 @@ section {
 }
 .cta-button {
   background: var(--primary-color);
-  color: var(--primary-color-dark);
+  color: #ffffff;
   padding: 0.75rem 1.5rem;
   border-radius: var(--border-radius);
   font-size: 1rem;
@@ -201,14 +247,12 @@ section {
 }
 .cta-button:hover {
   text-decoration: none;
-  background: var(--text-color);
-  color: var(--bg-color-start);
+  background: var(--primary-color-dark);
   transform: translateY(-3px);
-  box-shadow: 0 6px 14px rgba(0, 245, 195, 0.3);
+  box-shadow: 0 6px 14px rgba(0, 123, 255, 0.3);
 }
 
 /* Styles for Timeline (used by Experience and Education) */
-/* This makes sure they are not in a grid */
 .timeline .card {
   margin-bottom: 1.5rem;
 }
