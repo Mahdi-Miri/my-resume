@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahdi Miri - Data Scientist</title>
-    
-    <link rel="stylesheet" href="style.css">
-    
-    <script src="app.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahdi Miri - Data Scientist</title>
+
+  <!-- Load Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Load Script -->
+  <script src="app.js" defer></script>
 </head>
 <body>
+  <main class="container">
+    <section id="about-container"></section>
+    <section id="projects-container"></section>
+    <section id="experience-container"></section>
+    <section id="skills-container"></section>
+    <section id="education-container"></section>
+    <section id="contact-container"></section>
+  </main>
 
-    <main class="container">
-        
-        <section id="about-container"></section>
-        
-        <section id="projects-container"></section>
-        
-        <section id="experience-container"></section>
-
-        <section id="skills-container"></section>
-        
-        <section id="education-container"></section>
-
-        <section id="contact-container"></section>
-
-    </main>
-    
+  <!-- Fallback inline data for local mode -->
+  <script id="fallback-data" type="application/json">
+    {
+      "about": {
+        "firstname": "Mahdi",
+        "lastname": "Miri",
+        "jobTitle": "Data Scientist",
+        "description": "I am a Data Scientist currently pursuing my Master's degree in Naples, Italy. With a strong foundation in both Data Science and Computer Engineering, I specialize in building end-to-end machine learning solutions.",
+        "image": "assets/images/profile.jpg",
+        "socialLinks": [
+          { "icon": "location", "value": "Naples - Italy" },
+          { "icon": "phone", "value": "+39 3517867567", "link": "tel:+393517867567" },
+          { "icon": "mail", "value": "mahdimiri7@gmail.com", "link": "mailto:mahdimiri7@gmail.com" },
+          { "icon": "linkedin", "value": "mahdimi-miri-dev", "link": "https://www.linkedin.com/in/mahdimi-miri-dev" },
+          { "icon": "github", "value": "Mahdi-Miri", "link": "https://github.com/Mahdi-Miri" }
+        ]
+      }
+    }
+  </script>
 </body>
 </html>
