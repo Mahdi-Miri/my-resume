@@ -17,7 +17,7 @@
     --bg-color: #121212;
     --text-color: #e0e0e0;
     --text-secondary: #a0a0a0;
-    --accent-color: #4dabf7; /* Lighter Blue for dark bg */
+    --accent-color: #4dabf7; /* Lighter Blue for dark backgrounds */
     --accent-hover: #339af0;
     --card-bg: #1e1e1e;
     --border-color: #333333;
@@ -26,6 +26,7 @@
     --shadow-color: rgba(0, 0, 0, 0.5);
 }
 
+/* Global Reset & Transitions */
 * {
     margin: 0;
     padding: 0;
@@ -39,34 +40,36 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.7;
     overflow-x: hidden; /* Prevent horizontal scrollbar during animations */
 }
 
-/* --- ANIMATION CLASSES --- */
+/* --- KEYFRAME ANIMATION (Pure CSS) --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px); /* Start position: slightly lower */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* End position: original place */
+    }
+}
 
-/* Initial state: Hidden and shifted down */
+/* Class applied to HTML elements for animation */
 .animate-block {
-    opacity: 0;
-    transform: translateY(30px); /* Move down 30px */
-    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    opacity: 0; /* Initially hidden */
+    animation: fadeInUp 0.8s ease-out forwards; /* Run animation once */
 }
 
-/* Final state: Visible and in place (added by JS) */
-.animate-block.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Stagger delays for items appearing one after another */
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
+/* Staggered delays for cascading effect */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+.delay-4 { animation-delay: 0.8s; }
 
 
 /* --- LAYOUT & COMPONENT STYLES --- */
@@ -99,7 +102,6 @@ nav {
     font-size: 1.2rem;
     padding: 8px;
     border-radius: 50%;
-    transition: background-color 0.3s ease;
 }
 
 #theme-toggle:hover {
@@ -117,26 +119,18 @@ nav {
     font-weight: 800;
     margin-bottom: 0.5rem;
     letter-spacing: -1px;
-    line-height: 1.2;
 }
 
 .hero h2 {
     font-size: 1.3rem;
     color: var(--accent-color);
     margin-bottom: 1.5rem;
-    font-weight: 600;
 }
 
 .bio {
     color: var(--text-secondary);
     margin-bottom: 2.5rem;
     font-size: 1.1rem;
-    max-width: 600px;
-}
-
-.bio strong {
-    color: var(--text-color);
-    font-weight: 600;
 }
 
 .cta-buttons {
@@ -148,9 +142,8 @@ nav {
     text-decoration: none;
     padding: 0.7rem 1.4rem;
     border-radius: 8px;
-    font-size: 0.95rem;
     font-weight: 600;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s;
 }
 
 .btn:hover {
@@ -160,22 +153,11 @@ nav {
 .btn.primary {
     background-color: var(--accent-color);
     color: white;
-    box-shadow: 0 4px 14px rgba(0, 86, 179, 0.2);
-}
-
-.btn.primary:hover {
-    background-color: var(--accent-hover);
-    box-shadow: 0 6px 20px rgba(0, 86, 179, 0.3);
 }
 
 .btn.secondary {
     border: 2px solid var(--border-color);
     color: var(--text-color);
-}
-
-.btn.secondary:hover {
-    border-color: var(--text-color);
-    background-color: var(--card-bg);
 }
 
 /* Sections */
@@ -203,7 +185,7 @@ nav {
     margin-left: 15px;
 }
 
-/* Skills */
+/* Skills Tags */
 .skills-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -215,50 +197,38 @@ nav {
     color: var(--tag-text);
     padding: 0.5rem 1rem;
     border-radius: 6px;
-    font-size: 0.9rem;
     font-weight: 600;
-    transition: transform 0.2s ease;
 }
 
-.skill-tag:hover {
-    transform: translateY(-2px);
-}
-
-/* Projects Card - Enhanced */
+/* Project Cards */
 .project-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
     padding: 1.8rem;
     border-radius: 12px;
     margin-bottom: 1.8rem;
-    /* Smooth transition for hover effects */
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-/* New Hover Effect for Cards */
 .project-card:hover {
-    transform: translateY(-5px); /* Lift up slightly */
-    box-shadow: 0 15px 30px -10px var(--shadow-color); /* Soft shadow drop */
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 15px 30px -10px var(--shadow-color);
     border-color: var(--accent-color);
 }
 
 .project-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     margin-bottom: 1rem;
 }
 
 .project-header h4 {
-    font-size: 1.2rem;
     font-weight: 700;
+    font-size: 1.2rem;
 }
 
 .project-link {
     color: var(--text-secondary);
-    font-size: 1rem;
-    padding: 5px;
-    transition: color 0.2s ease;
 }
 
 .project-link:hover {
@@ -266,7 +236,6 @@ nav {
 }
 
 .project-desc {
-    font-size: 1rem;
     color: var(--text-secondary);
     margin-bottom: 1.2rem;
 }
@@ -283,20 +252,14 @@ nav {
     border-left: 3px solid var(--accent-color);
 }
 
-.tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
 .tech-stack small {
-    color: var(--text-secondary);
     font-family: monospace;
-    font-size: 0.85rem;
-    background-color: var(--bg-color);
+    color: var(--text-secondary);
+    background: var(--bg-color);
     padding: 2px 6px;
-    border-radius: 4px;
     border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-right: 5px;
 }
 
 /* Footer */
@@ -319,21 +282,4 @@ nav {
     color: var(--text-color);
     text-decoration: none;
     font-weight: 600;
-    position: relative;
-}
-
-/* Cool underline animation for footer links */
-.social-links a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--accent-color);
-    transition: width 0.3s ease;
-}
-
-.social-links a:hover::after {
-    width: 100%;
 }
