@@ -3,39 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahdi Miri - Data Scientist</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-    <script src="https://kit.fontawesome.com/a2e0e6e6d1.js" crossorigin="anonymous"></script>
-
-    <!-- Styles -->
+    <title>Mahdi Miri | ML & AI Engineer</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- Scripts -->
-    <script src="neuralBackground.js" defer></script>
-    <script src="app.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Theme Toggle Button -->
-    <button class="theme-toggle" id="themeToggle">
-        <i class="fas fa-moon"></i>
-    </button>
 
-    <!-- Animated Neural Network Background -->
-    <canvas id="neural-bg"></canvas>
+    <nav class="container">
+        <div class="logo">MM.</div>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </nav>
 
-    <!-- Main Resume Content -->
     <main class="container">
-        <section id="about-container"></section>
-        <section id="projects-container"></section>
-        <section id="experience-container"></section>
-        <section id="skills-container"></section>
-        <section id="education-container"></section>
-        <section id="contact-container"></section>
+        <header class="hero">
+            <h1>Mahdi Miri</h1>
+            <h2>ML / AI Engineer</h2>
+            <p class="bio">
+                I am a passionate engineer focused on building intelligent systems that solve real-world problems. 
+                Currently deep into <strong>Large Language Models (LLMs)</strong> and <strong>Generative AI</strong>, 
+                bridging the gap between complex data and actionable software solutions.
+            </p>
+            <div class="cta-buttons">
+                <a href="mailto:your-email@example.com" class="btn primary">Get in Touch</a>
+                <a href="https://github.com/your-username" target="_blank" class="btn secondary">GitHub</a>
+            </div>
+        </header>
+
+        <section class="section">
+            <h3 class="section-title">Technical Skills</h3>
+            <div class="skills-wrapper">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">TensorFlow & Keras</span>
+                <span class="skill-tag">PyTorch</span>
+                <span class="skill-tag">LLMs & RAG</span>
+                <span class="skill-tag">Scikit-learn</span>
+                <span class="skill-tag">XGBoost</span>
+                <span class="skill-tag">Pandas & NumPy</span>
+                <span class="skill-tag">Streamlit</span>
+                <span class="skill-tag">ML Engineering</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3 class="section-title">Selected Projects</h3>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h4>Australian Rainfall Prediction</h4>
+                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <p class="project-desc">
+                    A robust pipeline predicting rainfall using Deep Learning (ANN with Embeddings) and tuned XGBoost. 
+                    Handled imbalanced data using SMOTEENN.
+                </p>
+                <div class="project-meta">
+                    <span class="highlight">Key Result:</span> ANN achieved 84.7% Accuracy & 0.66 F1-Score.
+                </div>
+                <div class="tech-stack">
+                    <small>TensorFlow</small> <small>TabNet</small> <small>Optuna</small>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h4>ALS Disease Progression Modeling</h4>
+                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <p class="project-desc">
+                    Predicting clinical stages of Amyotrophic Lateral Sclerosis using Ordinal Logistic Regression to respect the ranked nature of disease severity.
+                </p>
+                <div class="project-meta">
+                    <span class="highlight">Methodology:</span> SMOTE for balancing & GLM (Statsmodels).
+                </div>
+                <div class="tech-stack">
+                    <small>Python</small> <small>Statsmodels</small> <small>Medical AI</small>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h4>Student Performance Dashboard</h4>
+                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <p class="project-desc">
+                    End-to-end web app using Streamlit to analyze academic performance. Combines unsupervised clustering (K-Means) with supervised grade prediction.
+                </p>
+                <div class="project-meta">
+                    <span class="highlight">Features:</span> Interactive EDA, PCA Visualization, Real-time prediction.
+                </div>
+                <div class="tech-stack">
+                    <small>Streamlit</small> <small>Plotly</small> <small>Scikit-learn</small>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-header">
+                    <h4>Vehicle Price Valuation System</h4>
+                    <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <p class="project-desc">
+                    A stacking regressor model combining XGBoost, Random Forest, and Linear Regression to estimate used car prices with high precision.
+                </p>
+                <div class="project-meta">
+                    <span class="highlight">Key Result:</span> Stacking Regressor achieved 0.96 R² Score.
+                </div>
+                <div class="tech-stack">
+                    <small>Ensemble Learning</small> <small>XGBoost</small> <small>Pandas</small>
+                </div>
+            </article>
+
+        </section>
     </main>
+
+    <footer class="container footer">
+        <p>&copy; 2025 Mahdi Miri. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+            <a href="https://github.com/your-username" target="_blank">GitHub</a>
+            <a href="mailto:your-email@example.com">Email</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
