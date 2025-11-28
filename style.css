@@ -2,13 +2,14 @@
     /* Light Mode Variables (Default) */
     --bg-color: #ffffff;
     --text-color: #333333;
-    --text-secondary: #666666;
+    --text-secondary: #555555;
     --accent-color: #0056b3; /* Professional Blue */
     --accent-hover: #004494;
-    --card-bg: #f9f9f9;
-    --border-color: #e0e0e0;
-    --tag-bg: #eeffff;
+    --card-bg: #fdfdfd;
+    --border-color: #e6e6e6;
+    --tag-bg: #f0f8ff;
     --tag-text: #0056b3;
+    --shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Dark Mode Variables */
@@ -22,25 +23,56 @@
     --border-color: #333333;
     --tag-bg: #1a2a3a;
     --tag-text: #4dabf7;
+    --shadow-color: rgba(0, 0, 0, 0.5);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Smooth transition for theme switching */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.7;
+    overflow-x: hidden; /* Prevent horizontal scrollbar during animations */
 }
 
-/* Layout */
+/* --- ANIMATION CLASSES --- */
+
+/* Initial state: Hidden and shifted down */
+.animate-block {
+    opacity: 0;
+    transform: translateY(30px); /* Move down 30px */
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Final state: Visible and in place (added by JS) */
+.animate-block.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger delays for items appearing one after another */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+
+
+/* --- LAYOUT & COMPONENT STYLES --- */
+
 .container {
-    max-width: 700px; /* Keeping it minimal and narrow like the examples */
+    max-width: 720px;
     margin: 0 auto;
     padding: 2rem 1.5rem;
 }
@@ -50,12 +82,12 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 3rem;
+    padding: 1.5rem 0 3rem 0;
 }
 
 .logo {
-    font-weight: 700;
-    font-size: 1.2rem;
+    font-weight: 800;
+    font-size: 1.3rem;
     letter-spacing: -0.5px;
 }
 
@@ -65,30 +97,46 @@ nav {
     cursor: pointer;
     color: var(--text-color);
     font-size: 1.2rem;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: var(--border-color);
 }
 
 /* Hero Section */
 .hero {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
+    padding-top: 2rem;
 }
 
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
+    font-weight: 800;
     margin-bottom: 0.5rem;
     letter-spacing: -1px;
+    line-height: 1.2;
 }
 
 .hero h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--accent-color);
     margin-bottom: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .bio {
     color: var(--text-secondary);
-    margin-bottom: 2rem;
-    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+    max-width: 600px;
+}
+
+.bio strong {
+    color: var(--text-color);
+    font-weight: 600;
 }
 
 .cta-buttons {
@@ -98,44 +146,61 @@ nav {
 
 .btn {
     text-decoration: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    font-size: 0.9rem;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
     font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
 }
 
 .btn.primary {
     background-color: var(--accent-color);
     color: white;
+    box-shadow: 0 4px 14px rgba(0, 86, 179, 0.2);
 }
 
 .btn.primary:hover {
     background-color: var(--accent-hover);
+    box-shadow: 0 6px 20px rgba(0, 86, 179, 0.3);
 }
 
 .btn.secondary {
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
     color: var(--text-color);
 }
 
 .btn.secondary:hover {
     border-color: var(--text-color);
+    background-color: var(--card-bg);
 }
 
 /* Sections */
 .section {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 
 .section-title {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--accent-color);
-    display: inline-block;
-    padding-bottom: 5px;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: var(--border-color);
+    flex-grow: 1;
+    margin-left: 15px;
 }
 
 /* Skills */
@@ -148,36 +213,52 @@ nav {
 .skill-tag {
     background-color: var(--tag-bg);
     color: var(--tag-text);
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: transform 0.2s ease;
 }
 
-/* Projects */
+.skill-tag:hover {
+    transform: translateY(-2px);
+}
+
+/* Projects Card - Enhanced */
 .project-card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
+    padding: 1.8rem;
+    border-radius: 12px;
+    margin-bottom: 1.8rem;
+    /* Smooth transition for hover effects */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* New Hover Effect for Cards */
+.project-card:hover {
+    transform: translateY(-5px); /* Lift up slightly */
+    box-shadow: 0 15px 30px -10px var(--shadow-color); /* Soft shadow drop */
+    border-color: var(--accent-color);
 }
 
 .project-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
 }
 
 .project-header h4 {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
 .project-link {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 1rem;
+    padding: 5px;
+    transition: color 0.2s ease;
 }
 
 .project-link:hover {
@@ -185,9 +266,9 @@ nav {
 }
 
 .project-desc {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--text-secondary);
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
 }
 
 .highlight {
@@ -196,42 +277,63 @@ nav {
 }
 
 .project-meta {
-    font-size: 0.9rem;
-    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--accent-color);
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .tech-stack small {
-    display: inline-block;
-    margin-right: 10px;
     color: var(--text-secondary);
     font-family: monospace;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    background-color: var(--bg-color);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
 }
 
 /* Footer */
 .footer {
+    margin-top: 4rem;
+    padding-top: 3rem;
     border-top: 1px solid var(--border-color);
-    margin-top: 2rem;
-    padding-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
     color: var(--text-secondary);
-    font-size: 0.9rem;
 }
 
 .social-links {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
     display: flex;
-    gap: 1.5rem;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .social-links a {
-    color: var(--text-secondary);
+    color: var(--text-color);
     text-decoration: none;
+    font-weight: 600;
+    position: relative;
 }
 
-.social-links a:hover {
-    color: var(--accent-color);
+/* Cool underline animation for footer links */
+.social-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
 }
 
+.social-links a:hover::after {
+    width: 100%;
+}
