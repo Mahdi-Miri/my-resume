@@ -1,27 +1,22 @@
-const toggleButton = document.getElementById('theme-toggle');
+const toggleButton = document.getElementById("theme-toggle");
 const body = document.body;
-const icon = toggleButton.querySelector('i');
+const icon = toggleButton.querySelector("i");
 
-// Check for saved user preference on load
-const currentTheme = localStorage.getItem('theme');
-if (currentTheme === 'dark') {
-    body.classList.add('dark-mode');
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
+// Load saved theme
+const currentTheme = localStorage.getItem("theme");
+if (currentTheme === "dark") {
+    body.classList.add("dark-mode");
+    icon.classList.replace("fa-moon", "fa-sun");
 }
 
-// Toggle theme on click
-toggleButton.addEventListener('click', function() {
-    body.classList.toggle('dark-mode');
+// Toggle
+toggleButton.addEventListener("click", () => {
+    const dark = body.classList.toggle("dark-mode");
 
-    // Update Icon and Save Preference to LocalStorage
-    if (body.classList.contains('dark-mode')) {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-        localStorage.setItem('theme', 'dark');
-    } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-        localStorage.setItem('theme', 'light');
-    }
+    icon.classList.replace(
+        dark ? "fa-moon" : "fa-sun",
+        dark ? "fa-sun" : "fa-moon"
+    );
+
+    localStorage.setItem("theme", dark ? "dark" : "light");
 });
