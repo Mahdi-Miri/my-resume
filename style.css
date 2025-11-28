@@ -1,227 +1,169 @@
-/* ---------------------------------------------
-   GLOBAL COLOR SYSTEM (AI BLUE THEME)
---------------------------------------------- */
-:root {
-    --bg-color: #f6f9fc;
-    --text-color: #0b0f19;
-    --text-secondary: #4a5568;
-
-    --accent-color: #1a73e8;       /* AI Blue */
-    --accent-hover: #155fc4;
-
-    --card-bg: #ffffff;
-    --border-color: #dce3ee;
-
-    --tag-bg: #e7f1ff;
-    --tag-text: #1a73e8;
-
-    --shadow-color: rgba(0, 0, 0, 0.1);
-}
-
-/* -------- DARK MODE COLORS -------- */
-.dark-mode {
-    --bg-color: #0b0f19;
-    --text-color: #e6e8f0;
-    --text-secondary: #a0acc4;
-
-    --accent-color: #61a0ff;
-    --accent-hover: #4a8ded;
-
-    --card-bg: #111726;
-    --border-color: #2a3142;
-
-    --tag-bg: #1e2b45;
-    --tag-text: #61a0ff;
-
-    --shadow-color: rgba(0, 0, 0, 0.6);
-}
-
-/* ---------------------------------------------
-   RESET
---------------------------------------------- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-    transition: background-color .3s, color .3s, border-color .3s;
-}
-
+/* Reset */
 body {
+    margin: 0;
     font-family: 'Inter', sans-serif;
-    background: var(--bg-color);
-    color: var(--text-color);
-    overflow-x: hidden;
+    color: #0A1A2F;
     line-height: 1.6;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+/* ---------------------------------------------------
+   AI / ML Animated Background (Neural Flow)
+----------------------------------------------------*/
 
-/* ---------------------------------------------
-   AI BACKGROUND ANIMATION (NEURAL FIELD)
---------------------------------------------- */
-
-body.animated-bg::before {
+.ai-bg::before {
     content: "";
     position: fixed;
     inset: 0;
+    background: linear-gradient(135deg, #E8F1FF, #CFE5FF, #E6F3FA);
+    background-size: 200% 200%;
+    animation: gradientShift 12s ease-in-out infinite alternate;
     z-index: -3;
-
-    /* AI gradient waves */
-    background: radial-gradient(circle at 20% 30%, rgba(26,115,232,0.28), transparent 60%),
-                radial-gradient(circle at 80% 75%, rgba(0,200,255,0.20), transparent 70%);
-
-    animation: bgWave 12s ease-in-out infinite alternate;
 }
 
-@keyframes bgWave {
-    from { transform: translateY(0px) translateX(-20px); }
-    to   { transform: translateY(-25px) translateX(20px); }
-}
-
-/* Floating particles */
-body.animated-bg::after {
+/* floating subtle particles */
+.ai-bg::after {
     content: "";
     position: fixed;
     inset: 0;
-    z-index: -2;
-
-    background-image:
-        radial-gradient(circle, rgba(255,255,255,0.45) 3px, transparent 4px),
-        radial-gradient(circle, rgba(255,255,255,0.25) 2px, transparent 4px);
-    background-size: 180px 180px, 130px 130px;
-
+    background-image: radial-gradient(circle, rgba(255,255,255,0.55) 2px, transparent 3px);
+    background-size: 120px 120px;
     animation: floatDots 25s linear infinite;
+    opacity: 0.65;
+    z-index: -2;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 30%; }
+    100% { background-position: 100% 70%; }
 }
 
 @keyframes floatDots {
-    0% { background-position: 0 0, 50px 80px; }
-    50% { background-position: 90px 140px, 0px 30px; }
-    100% { background-position: 0 0, 50px 80px; }
+    0% { background-position: 0 0; }
+    100% { background-position: 300px 400px; }
 }
 
-/* Dark Mode adaptation */
-.dark-mode.animated-bg::after {
-    background-image:
-        radial-gradient(circle, rgba(255,255,255,0.25) 2px, transparent 3px),
-        radial-gradient(circle, rgba(255,255,255,0.15) 1.5px, transparent 3px);
+/* ---------------------------------------------------
+   Layout Spacing System
+----------------------------------------------------*/
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
 }
 
-/* ---------------------------------------------
-   LAYOUT
---------------------------------------------- */
-.container {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem;
+section {
+    margin-top: 80px;
 }
 
-nav {
+/* ---------------------------------------------------
+   Header
+----------------------------------------------------*/
+.header {
     display: flex;
     justify-content: space-between;
-    padding: 1.5rem 0 3rem 0;
+    padding: 24px 40px;
+    font-weight: 600;
 }
 
 .logo {
-    font-weight: 800;
-    font-size: 1.3rem;
+    font-size: 22px;
 }
 
-#theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--text-color);
-    font-size: 1.2rem;
-}
-
-/* ---------------------------------------------
+/* ---------------------------------------------------
    HERO SECTION
---------------------------------------------- */
+----------------------------------------------------*/
+
 .hero {
-    margin-bottom: 4rem;
-    padding-top: 1rem;
+    margin-top: 100px;
 }
 
 .hero h1 {
-    font-size: 2.8rem;
+    font-size: 48px;
     font-weight: 800;
 }
 
-.hero h2 {
-    color: var(--accent-color);
-    font-size: 1.3rem;
-    margin-bottom: 1.3rem;
+.role {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1976FF;
+    margin-top: 12px;
 }
 
-.bio {
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
+.desc {
+    margin-top: 20px;
+    font-size: 17px;
+    max-width: 620px;
 }
 
-/* Buttons */
-.cta-buttons {
+.buttons {
+    margin-top: 28px;
     display: flex;
-    gap: 1rem;
+    gap: 16px;
 }
 
 .btn {
-    text-decoration: none;
-    padding: 0.7rem 1.4rem;
-    border-radius: 8px;
+    padding: 12px 26px;
+    border-radius: 10px;
     font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn.primary {
-    background: var(--accent-color);
+    background: #1976FF;
     color: white;
+    box-shadow: 0 4px 12px rgba(0, 119, 255, 0.3);
 }
 
 .btn.secondary {
-    border: 2px solid var(--border-color);
-    color: var(--text-color);
+    background: white;
+    color: #0A1A2F;
+    border: 1px solid #D0D9E6;
 }
 
-/* ---------------------------------------------
-   SECTIONS
---------------------------------------------- */
-.section-title {
-    margin-bottom: 1.8rem;
-    color: var(--text-secondary);
-    font-size: .9rem;
-    text-transform: uppercase;
+/* ---------------------------------------------------
+   Skills Section
+----------------------------------------------------*/
+
+.skills-section h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
-/* Skill tags */
-.skill-tag {
-    background: var(--tag-bg);
-    color: var(--tag-text);
-    padding: .5rem 1rem;
-    border-radius: 6px;
-    font-weight: 600;
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-/* Project Cards */
+.skills span {
+    background: #E5F0FF;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ---------------------------------------------------
+   Projects Section
+----------------------------------------------------*/
+
 .project-card {
-    background: var(--card-bg);
-    padding: 1.8rem;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-
-    transition: transform .3s, box-shadow .3s;
+    background: white;
+    padding: 28px;
+    border-radius: 16px;
+    margin-top: 32px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.07);
 }
 
-.project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px -8px var(--shadow-color);
+.project-card h4 {
+    margin: 0;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
-/* Footer */
-.footer {
-    text-align: center;
-    margin-top: 4rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border-color);
+.project-card p {
+    margin: 0;
+    opacity: 0.75;
 }
