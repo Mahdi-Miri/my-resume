@@ -3,70 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahdi Miri – ML / AI Engineer</title>
+    <title>Mahdi Miri | ML & AI Engineer</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+<body>
 
-<body class="ai-bg">
-
-    <header class="header">
+    <nav class="container animate-block">
         <div class="logo">MM.</div>
-        <div class="theme-toggle">🌙</div>
-    </header>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </nav>
 
-    <main>
+    <main class="container">
+        <header class="hero animate-block">
+            <div class="hero-content">
+                <h1>Mahdi Miri</h1>
+                <h2>ML / AI Engineer</h2>
+                
+                <div class="location-badge">
+                    <i class="fas fa-map-marker-alt"></i> Naples, Italy
+                </div>
 
-        <section class="hero">
-            <h1>Mahdi Miri</h1>
-            <h2 class="role">ML / AI Engineer</h2>
-            <p class="desc">
-                I am a passionate engineer focused on building intelligent systems that solve real-world problems.
-                Currently deep into <strong>Large Language Models (LLMs)</strong> and <strong>Generative AI</strong>,
-                bridging the gap between complex data and actionable software solutions.
-            </p>
-
-            <div class="buttons">
-                <a href="#" class="btn primary">Get in Touch</a>
-                <a href="#" class="btn secondary">GitHub</a>
-            </div>
-        </section>
-
-        <section class="skills-section">
-            <h3>Technical Skills</h3>
-            <div class="skills">
-                <span>Python</span>
-                <span>TensorFlow & Keras</span>
-                <span>PyTorch</span>
-                <span>LLMs & RAG</span>
-                <span>Scikit-learn</span>
-                <span>XGBoost</span>
-                <span>Pandas & NumPy</span>
-                <span>Streamlit</span>
-                <span>ML Engineering</span>
-            </div>
-        </section>
-
-        <section class="projects-section">
-            <h3>Selected Projects</h3>
-
-            <div class="project-card">
-                <h4>Australian Rainfall Prediction</h4>
-                <p>
-                    A robust pipeline predicting rainfall using Deep Learning (ANN with Embeddings)
-                    and tuned XGBoost…
+                <p class="bio">
+                    I am a passionate engineer focused on building intelligent systems that solve real-world problems. 
+                    Currently deep into <strong>Large Language Models (LLMs)</strong> and <strong>Generative AI</strong>, 
+                    bridging the gap between complex data and actionable software solutions.
                 </p>
+                <div class="cta-buttons">
+                    <a href="mailto:your-email@example.com" class="btn primary">Get in Touch</a>
+                    <a href="https://github.com/your-username" target="_blank" class="btn secondary">GitHub</a>
+                </div>
             </div>
+        </header>
 
-            <div class="project-card">
-                <h4>ALS Disease Progression Modeling</h4>
-                <p>
-                    Predicting clinical scores using ML models…
-                </p>
+        <section class="section animate-block">
+            <h3 class="section-title">Technical Stack</h3>
+            <div class="skills-wrapper">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">TensorFlow & Keras</span>
+                <span class="skill-tag">PyTorch</span>
+                <span class="skill-tag">LLMs & RAG</span>
+                <span class="skill-tag">Scikit-learn</span>
+                <span class="skill-tag">XGBoost</span>
+                <span class="skill-tag">Pandas & NumPy</span>
+                <span class="skill-tag">Streamlit</span>
+                <span class="skill-tag">ML Engineering</span>
             </div>
-
         </section>
 
+        <section class="section">
+            <h3 class="section-title animate-block">Selected Projects</h3>
+            
+            <div class="projects-grid">
+                <article class="project-card animate-block delay-1">
+                    <div class="project-header">
+                        <h4>Australian Rainfall Prediction</h4>
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <p class="project-desc">
+                        A robust pipeline predicting rainfall using Deep Learning (ANN with Embeddings) and tuned XGBoost. 
+                    </p>
+                    <div class="project-meta">
+                        <span class="highlight">Result:</span> 84.7% Acc & 0.66 F1-Score.
+                    </div>
+                    <div class="tech-stack">
+                        <small>TensorFlow</small> <small>TabNet</small> <small>Optuna</small>
+                    </div>
+                </article>
+
+                <article class="project-card animate-block delay-2">
+                    <div class="project-header">
+                        <h4>ALS Disease Modeling</h4>
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <p class="project-desc">
+                        Predicting clinical stages of ALS using Ordinal Logistic Regression to respect disease severity ranking.
+                    </p>
+                    <div class="project-meta">
+                        <span class="highlight">Method:</span> SMOTE & GLM (Statsmodels).
+                    </div>
+                    <div class="tech-stack">
+                        <small>Python</small> <small>Medical AI</small>
+                    </div>
+                </article>
+
+                <article class="project-card animate-block delay-3">
+                    <div class="project-header">
+                        <h4>Student Performance Dashboard</h4>
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <p class="project-desc">
+                        Web app analyzing academic performance via unsupervised clustering and supervised prediction.
+                    </p>
+                    <div class="project-meta">
+                        <span class="highlight">Features:</span> Interactive EDA & PCA Viz.
+                    </div>
+                    <div class="tech-stack">
+                        <small>Streamlit</small> <small>Plotly</small> <small>Scikit-learn</small>
+                    </div>
+                </article>
+
+                <article class="project-card animate-block delay-4">
+                    <div class="project-header">
+                        <h4>Vehicle Price Valuation</h4>
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                    <p class="project-desc">
+                        Stacking regressor model combining XGBoost and Random Forest for high precision pricing.
+                    </p>
+                    <div class="project-meta">
+                        <span class="highlight">Result:</span> 0.96 R² Score.
+                    </div>
+                    <div class="tech-stack">
+                        <small>Stacking</small> <small>XGBoost</small> <small>Pandas</small>
+                    </div>
+                </article>
+            </div>
+        </section>
     </main>
 
+    <footer class="container footer animate-block">
+        <p>&copy; 2025 Mahdi Miri. Built in Naples, Italy.</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+            <a href="https://github.com/your-username" target="_blank">GitHub</a>
+            <a href="mailto:your-email@example.com">Email</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
