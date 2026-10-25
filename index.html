@@ -1,330 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahdi Miri — AI/ML Engineer</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%2317191C%22/><text x=%2250%22 y=%2266%22 font-family=%22monospace%22 font-size=%2244%22 fill=%22%23EFEFEA%22 text-anchor=%22middle%22>M</text></svg>">
-    <meta name="description" content="Mahdi Miri — AI/ML Engineer specializing in LLM applications, RAG pipelines, and multi-agent systems. MSc Data Science, Naples, Italy.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahdi Miri — AI/ML Engineer</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%231A1D21%22/><text x=%2250%22 y=%2272%22 font-family=%22Helvetica,Arial%22 font-weight=%22bold%22 font-size=%2262%22 fill=%22%23F3F2EE%22 text-anchor=%22middle%22>M</text></svg>">
+<meta name="description" content="Mahdi Miri — AI/ML Engineer in Naples, Italy. LLM applications, RAG pipelines, multi-agent systems, and AI safety research.">
 
-    <meta property="og:title" content="Mahdi Miri — AI/ML Engineer">
-    <meta property="og:description" content="LLM applications, RAG pipelines, and multi-agent systems. MSc Data Science, Naples, Italy.">
-    <meta property="og:image" content="assets/og-image.png">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="Mahdi Miri — AI/ML Engineer">
+<meta property="og:description" content="LLM applications, RAG pipelines, multi-agent systems. Naples, Italy.">
+<meta property="og:image" content="assets/og-image.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <a href="#home" class="logo">mahdi<span>.</span>miri</a>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<div class="shell">
+
+  <!-- ====== LEFT RAIL ====== -->
+  <aside class="rail">
+    <div class="rail-inner">
+
+      <header class="identity">
+        <p class="status"><span class="dot"></span>Open to work — Italy &amp; EU</p>
+        <h1>Mahdi<br>Miri</h1>
+        <p class="role">AI/ML Engineer</p>
+        <p class="place">Naples, Italy</p>
+      </header>
+
+      <nav class="rail-nav" aria-label="Sections">
+        <ol>
+          <li><a href="#work" data-target="work"><span class="n">01</span>Work</a></li>
+          <li><a href="#research" data-target="research"><span class="n">02</span>Research</a></li>
+          <li><a href="#stack" data-target="stack"><span class="n">03</span>Stack</a></li>
+          <li><a href="#projects" data-target="projects"><span class="n">04</span>Projects</a></li>
+          <li><a href="#education" data-target="education"><span class="n">05</span>Education</a></li>
+        </ol>
+      </nav>
+
+      <div class="rail-foot">
+        <a class="cta" href="mailto:mahdimiri7@gmail.com">Email me</a>
+        <ul class="rail-links">
+          <li><a href="https://www.linkedin.com/in/mahdi-miri-dev/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/Mahdi-Miri" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-            <span class="mode-label">dark</span>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Switch colour theme">
+          <span id="mode-label">Dark</span>
         </button>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-            <span></span><span></span><span></span>
-        </button>
-    </nav>
+      </div>
 
-    <section id="home" class="hero">
-        <div class="hero-text">
-            <p class="kicker">AI/ML Engineer — Naples, Italy</p>
-            <h1>Mahdi Miri</h1>
-            <p class="hero-statement">
-                I build production LLM applications — retrieval pipelines,
-                multi-agent systems, and the infrastructure that ships them.
-                My research background is in causal AI safety: identifying
-                which factors actually drive a model's behavior, not just
-                which prompts happen to work.
-            </p>
-            <div class="hero-links">
-                <a href="#projects" class="btn-primary">View projects</a>
-                <a href="#contact" class="btn-ghost">Get in touch</a>
-            </div>
-            <ul class="social-row">
-                <li><a href="https://www.linkedin.com/in/mahdi-miri-dev/" target="_blank" rel="noopener">LinkedIn</a></li>
-                <li><a href="https://github.com/Mahdi-Miri" target="_blank" rel="noopener">GitHub</a></li>
-                <li><a href="mailto:mahdimiri7@gmail.com">Email</a></li>
-            </ul>
-        </div>
+    </div>
+  </aside>
 
-        <div class="hero-graph" aria-hidden="true">
-            <svg viewBox="0 0 420 360" class="dag">
-                <g class="dag-edges">
-                    <path d="M70,80 L190,60" />
-                    <path d="M70,80 L120,190" />
-                    <path d="M190,60 L330,100" />
-                    <path d="M120,190 L190,60" />
-                    <path d="M120,190 L250,250" />
-                    <path d="M330,100 L250,250" />
-                    <path d="M250,250 L150,310" class="edge-accent" />
-                </g>
-                <g class="dag-nodes">
-                    <circle cx="70" cy="80" r="9" class="n-c1" />
-                    <text x="70" y="56" class="t-c1">prompt</text>
+  <!-- ====== CONTENT ====== -->
+  <main class="content" id="main">
 
-                    <circle cx="190" cy="60" r="9" class="n-c3" />
-                    <text x="190" y="36" class="t-c3">factor</text>
-
-                    <circle cx="120" cy="190" r="9" class="n-c2" />
-                    <text x="120" y="216" text-anchor="middle" class="t-c2">retrieve</text>
-
-                    <circle cx="330" cy="100" r="9" class="n-c4" />
-                    <text x="330" y="76" text-anchor="end" class="t-c4">agent</text>
-
-                    <circle cx="250" cy="250" r="9" class="n-c1" />
-                    <text x="250" y="276" text-anchor="middle" class="t-c1">reason</text>
-
-                    <circle cx="150" cy="310" r="11" class="node-accent" />
-                    <text x="150" y="336" text-anchor="middle" class="label-accent">response</text>
-                </g>
-            </svg>
-        </div>
+    <section class="intro">
+      <p class="lede">
+        I build <mark>production LLM systems</mark> — retrieval pipelines,
+        multi-agent architectures, and the infrastructure that keeps them
+        fast, cheap and reliable in front of real users.
+      </p>
+      <p class="lede-sub">
+        My research background is in causal AI safety: working out
+        <mark>which factors actually cause</mark> a model to misbehave,
+        rather than collecting prompts that happen to break it. Currently
+        finishing an MSc in Data Science at the University of Naples Federico II.
+      </p>
     </section>
 
-    <section class="stats">
-        <div class="stats-grid">
-            <div class="stat">
-                <span class="num">0.867</span>
-                <span class="label">context recall — agentic legal RAG system</span>
-            </div>
-            <div class="stat">
-                <span class="num">84.7%</span>
-                <span class="label">forecast accuracy — rainfall prediction (ANN + XGBoost)</span>
-            </div>
-            <div class="stat">
-                <span class="num">~70%</span>
-                <span class="label">F1 score — fine-tuned NER model (GLiNER)</span>
-            </div>
-            <div class="stat">
-                <span class="num">100%</span>
-                <span class="label">execution reliability — conversational agent automation</span>
-            </div>
+    <section id="work" class="block">
+      <h2><span class="n">01</span>Work</h2>
+
+      <article class="entry">
+        <div class="entry-meta">
+          <span class="when">May 2026 — now</span>
+          <span class="where">Public Policy<br><span class="loc">Rome · Hybrid</span></span>
         </div>
+        <div class="entry-body">
+          <h3>Artificial Intelligence Engineer</h3>
+          <ul>
+            <li>Architected and deployed multi-agent systems over a knowledge graph (OxiGraph) alongside relational stores (PostgreSQL, Supabase), so agents reason against structured, verifiable data.</li>
+            <li>Built GraphRAG pipelines that combine SPARQL queries with LLM retrieval, improving context grounding and answer accuracy.</li>
+            <li>Fine-tuned a GLiNER model for named entity recognition, reaching an <mark>F1 of ~70%</mark> on structured extraction inside automated workflows.</li>
+            <li>Built a Playwright scraping pipeline to collect and clean the data those agents depend on.</li>
+            <li>Shipped everything through Docker, Kubernetes, and GitHub Actions CI/CD.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta">
+          <span class="when">Feb 2026 — Aug 2026</span>
+          <span class="where">S2SDYNAMICS<br><span class="loc">Hamburg · Remote</span></span>
+        </div>
+        <div class="entry-body">
+          <h3>Artificial Intelligence Engineer</h3>
+          <ul>
+            <li>Engineered production RAG architectures, including Adaptive RAG workflows that route queries by difficulty to improve retrieval accuracy and relevance.</li>
+            <li>Designed scalable microservices for AI applications, keeping availability high across a distributed system.</li>
+            <li>Paired vector databases with structured SQL so enterprise search could query deeply nested data efficiently.</li>
+            <li>Containerized services with Docker under disciplined Git versioning, making deployments consistent and repeatable.</li>
+            <li>Automated analysis workflows with PandasAI and LangChain, extending what LLMs could do with production data.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta">
+          <span class="when">Feb 2021 — Mar 2022</span>
+          <span class="where">Goalearn<br><span class="loc">Isfahan</span></span>
+        </div>
+        <div class="entry-body">
+          <h3>Back-end Developer</h3>
+          <ul>
+            <li>Designed and optimized the relational database layer (PHP, Laravel, MySQL), improving query performance by <mark>65%</mark>.</li>
+            <li>Built REST API integrations that cut crash incidents by 20% under stress testing.</li>
+          </ul>
+        </div>
+      </article>
     </section>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>I'm an AI/ML engineer focused on building production-grade LLM applications, retrieval-augmented generation (RAG) pipelines, and multi-agent systems. I work across the full stack — from document ingestion and hybrid semantic search to tool-calling agents and deployment — using LangChain, LangGraph, and Python/FastAPI, containerized with Docker and shipped through CI/CD.</p>
-                    <p>My background also includes AI safety research. My MSc thesis, currently in progress, develops a causal framework for identifying which prompt-level factors actually drive toxic LLM outputs, benchmarked against published jailbreak methods like AutoDAN and GPTFuzz.</p>
-                    <p>Based in Naples, Italy. Open to AI/ML engineering opportunities across Italy and the EU.</p>
-                </div>
+    <section id="research" class="block">
+      <h2><span class="n">02</span>Research</h2>
 
-                <div class="about-skills">
-                    <div class="skill-group">
-                        <h3>LLM &amp; RAG engineering</h3>
-                        <p>Large language models, retrieval-augmented generation, semantic search, prompt engineering, fine-tuning (LoRA, QLoRA), GraphRAG, transformers.</p>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Agentic systems</h3>
-                        <p>Multi-agent orchestration, LangGraph, Model Context Protocol (MCP), Agent-to-Agent (A2A) protocol, tool-calling agents.</p>
-                    </div>
-                    <div class="skill-group">
-                        <h3>MLOps &amp; deployment</h3>
-                        <p>Docker, Kubernetes, CI/CD (GitHub Actions), GCP, AWS SageMaker, LLM observability (LangSmith, Opik).</p>
-                    </div>
-                    <div class="skill-group">
-                        <h3>Data &amp; backend</h3>
-                        <p>Python, FastAPI, PostgreSQL, Supabase, Vector databases (Pinecone), OxiGraph, SPARQL, Neo4j, SQL.</p>
-                    </div>
-                    <div class="skill-group">
-                        <h3>AI safety &amp; research</h3>
-                        <p>Red teaming, adversarial testing, causal structure learning, toxicity testing, risk assessment.</p>
-                    </div>
-                </div>
-            </div>
+      <article class="entry">
+        <div class="entry-meta">
+          <span class="when">Feb 2025 — Sep 2025</span>
+          <span class="where">University of Naples Federico II<br><span class="loc">Naples</span></span>
         </div>
+        <div class="entry-body">
+          <h3>AI Safety Research Engineer</h3>
+          <p class="entry-lead">
+            CausalTox — a causal, closed-loop framework for LLM toxicity testing,
+            and the subject of my MSc thesis.
+          </p>
+          <ul>
+            <li>Used causal structure learning (DAGMA) to find which prompt-level linguistic factors sit causally upstream of toxic model output, rather than merely correlating with it.</li>
+            <li>Designed and evaluated three red-teaming strategies — single-pass rewriting, a closed feedback loop, and category-specific targeting — against published baselines AutoDAN and GPTFuzz across four victim models.</li>
+            <li>The closed-loop variant, built on an EvoTox-style (1+λ) evolution strategy, <mark>outperformed every baseline on 3 of 4 models</mark>.</li>
+            <li>Validated all five research questions with paired statistical tests (Wilcoxon signed-rank, rank-biserial effect size), scored via the Perspective API.</li>
+          </ul>
+        </div>
+      </article>
     </section>
 
-    <section id="experience" class="section bg-alt">
-        <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="timeline">
-
-                <div class="timeline-item">
-                    <span class="date">May 2026 — Present</span>
-                    <h3>Artificial Intelligence Engineer</h3>
-                    <h4>Public Policy · Rome, Italy</h4>
-                    <ul>
-                        <li>Architected and deployed multi-agent AI systems integrating graph databases (OxiGraph) and relational data stores (PostgreSQL, Supabase) to support knowledge-grounded reasoning and retrieval.</li>
-                        <li>Implemented GraphRAG pipelines, combining SPARQL queries over graph databases with LLM-based retrieval to improve context grounding and answer accuracy.</li>
-                        <li>Fine-tuned a Named Entity Recognition model (GLiNER), achieving an F1-score of ~70% for structured entity extraction within automated workflows.</li>
-                        <li>Built and scaled a custom web scraping pipeline with Playwright to collect and preprocess data feeding downstream AI agents.</li>
-                        <li>Containerized and orchestrated services with Docker and Kubernetes, with CI/CD pipelines automated via GitHub Actions.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="date">Feb 2026 — Aug 2026</span>
-                    <h3>Artificial Intelligence Engineer</h3>
-                    <h4>S2SDYNAMICS · Hamburg, Germany (Remote)</h4>
-                    <ul>
-                        <li>Engineered and deployed production-ready RAG architectures, implementing Adaptive RAG workflows to improve retrieval accuracy and response relevance.</li>
-                        <li>Architected and managed scalable microservices for AI-driven applications, ensuring seamless integration and high availability across distributed system infrastructure.</li>
-                        <li>Optimized data retrieval by integrating vector databases with structured SQL systems, enabling efficient querying over complex, nested data for enterprise-level search.</li>
-                        <li>Containerized AI services with Docker and implemented Git-based version control, streamlining MLOps pipelines and improving deployment consistency.</li>
-                        <li>Automated data analysis workflows using Python libraries including PandasAI and LangChain, extending LLM capabilities for production use cases.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="date">Feb 2025 — Sep 2025</span>
-                    <h3>AI Safety Research Engineer</h3>
-                    <h4>University of Naples Federico II</h4>
-                    <ul>
-                        <li>Designed and implemented CausalTox, a causal structure-learning framework (DAGMA) to identify prompt-level linguistic factors causally upstream of toxic LLM continuations, as the core of an MSc thesis in AI safety.</li>
-                        <li>Developed and evaluated three red-teaming strategies — single-pass rewriting, a closed feedback loop, and category-specific targeting — benchmarking them against published jailbreak baselines (AutoDAN, GPTFuzz) across four victim LLMs.</li>
-                        <li>Built an automated, closed-loop adversarial testing pipeline inspired by the EvoTox (1+λ) evolution strategy, which outperformed all baseline methods on 3 of 4 victim models.</li>
-                        <li>Validated results through rigorous statistical testing (Wilcoxon signed-rank, rank-biserial effect size) using the Perspective API for automated toxicity scoring.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <span class="date">Feb 2021 — Mar 2022</span>
-                    <h3>Back-end Developer</h3>
-                    <h4>Goalearn · Isfahan, Iran</h4>
-                    <ul>
-                        <li>Designed and optimized relational database architecture (PHP, Laravel, MySQL), improving query performance by 65%.</li>
-                        <li>Built and integrated REST APIs, strengthening the reliability of backend-frontend communication and reducing crash incidents by 20%.</li>
-                    </ul>
-                </div>
-
-            </div>
+    <section id="stack" class="block">
+      <h2><span class="n">03</span>Stack</h2>
+      <dl class="stack">
+        <div>
+          <dt>LLM &amp; retrieval</dt>
+          <dd>RAG, GraphRAG, semantic &amp; hybrid search, reranking (cross-encoder, bi-encoder), prompt engineering, fine-tuning (LoRA, QLoRA), transformers</dd>
         </div>
+        <div>
+          <dt>Agents</dt>
+          <dd>LangGraph, LangChain, multi-agent orchestration, tool calling, Model Context Protocol (MCP), Agent-to-Agent (A2A)</dd>
+        </div>
+        <div>
+          <dt>Languages &amp; services</dt>
+          <dd>Python, FastAPI, TypeScript, Node.js, REST APIs, PyTorch, TensorFlow, scikit-learn</dd>
+        </div>
+        <div>
+          <dt>Data</dt>
+          <dd>PostgreSQL, Supabase, Pinecone, FAISS, OxiGraph, SPARQL, Neo4j, MongoDB, SQL</dd>
+        </div>
+        <div>
+          <dt>Ship &amp; observe</dt>
+          <dd>Docker, Kubernetes, GitHub Actions, GCP, AWS SageMaker, MLflow, LangSmith, Opik, LLM-as-a-judge</dd>
+        </div>
+        <div>
+          <dt>Safety</dt>
+          <dd>Red teaming, adversarial testing, causal structure learning, toxicity evaluation, guardrails</dd>
+        </div>
+      </dl>
     </section>
 
-    <section id="education" class="section">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="timeline">
+    <section id="projects" class="block">
+      <h2><span class="n">04</span>Projects</h2>
 
-                <div class="timeline-item">
-                    <span class="date">Sep 2023 — Expected Feb 2027</span>
-                    <h3>Master of Science, Data Science</h3>
-                    <h4>University of Naples Federico II</h4>
-                    <ul>
-                        <li>Current GPA: 100/110. Focus: AI safety, large language models, causal inference.</li>
-                        <li>Thesis (in progress): <em>"CausalTox: A Causal, Closed-Loop Framework for LLM Toxicity Testing."</em> Develops a causal structure-learning framework (DAGMA) benchmarked against AutoDAN and GPTFuzz across four victim models.</li>
-                        <li>Relevant coursework: Machine Learning, Deep Learning, Natural Language Processing, Statistical Learning, Big Data Analytics.</li>
-                    </ul>
-                </div>
+      <article class="proj">
+        <h3>Agentic RAG for legal question answering</h3>
+        <p>A multi-agent RAG system answering civil-law questions across jurisdictions, coordinated by a supervisor–worker architecture over a FAISS hybrid retrieval pipeline. Reached <mark>0.867 context recall</mark> and 0.776 faithfulness, measured with RAGAS.</p>
+        <p class="proj-foot"><span class="tags">Multi-agent RAG · FAISS · RAGAS · OpenAI &amp; Llama</span><a href="https://github.com/MohammadAghaei1/Agentic-RAG" target="_blank" rel="noopener">Repository</a></p>
+      </article>
 
-                <div class="timeline-item">
-                    <span class="date">Jul 2019 — Aug 2022</span>
-                    <h3>Bachelor of Science, Software Engineering</h3>
-                    <h4>Azad University of Isfahan</h4>
-                    <ul>
-                        <li>Capstone project: designed and implemented a custom content management system (PHP, MySQL), focused on architecture patterns and database efficiency.</li>
-                        <li>Core competencies: data structures &amp; algorithms, object-oriented programming, software architecture, database design.</li>
-                    </ul>
-                </div>
+      <article class="proj">
+        <h3>Conversational workflow automation agent</h3>
+        <p>A Gemini 2.5 Flash agent with strict function calling that reached <mark>100% execution reliability</mark> in workflow automation, built as a four-layer system with custom multi-turn state and undo/redo that never loses data.</p>
+        <p class="proj-foot"><span class="tags">Function calling · Streamlit · Pydantic</span></p>
+      </article>
 
-            </div>
+      <article class="proj">
+        <h3>Meteorological forecasting system</h3>
+        <p>Rainfall prediction over 145,000+ weather records. An ANN with entity embeddings plus an Optuna-tuned XGBoost model hit <mark>84.7% accuracy</mark> and an F1 of 0.66, beating Random Forest and logistic regression baselines.</p>
+        <p class="proj-foot"><span class="tags">TensorFlow · XGBoost · Optuna</span><a href="https://github.com/Mahdi-Miri/Rain_Prediction-" target="_blank" rel="noopener">Repository</a></p>
+      </article>
 
-            <div class="training-note">
-                <span class="date">Oct 2025 — Jun 2026</span>
-                <h4>iOS Machine Learning Engineer — Apple Developer Academy, Naples</h4>
-                <p>Additional training in on-device machine learning: built computer-vision and NLP classifiers deployed on iOS with Swift, SwiftUI, and CoreML.</p>
-            </div>
-        </div>
+      <article class="proj">
+        <h3>Vehicle price valuation</h3>
+        <p>A stacking ensemble of XGBoost, Random Forest and linear regression forecasting used-car prices, reaching an R² of 0.96 with a mean absolute error of 0.62.</p>
+        <p class="proj-foot"><span class="tags">Stacking regressors · Feature engineering</span><a href="https://github.com/MohammadAghaei1/Polynomial-Car-price-prediction-" target="_blank" rel="noopener">Repository</a></p>
+      </article>
+
+      <article class="proj">
+        <h3>Student performance analytics</h3>
+        <p>A Streamlit application segmenting students into behavioural groups with K-Means and PCA, turning course data into something a teacher can act on.</p>
+        <p class="proj-foot"><span class="tags">Streamlit · K-Means · PCA</span><a href="https://github.com/FaridRash/HW-SW-B" target="_blank" rel="noopener">Repository</a></p>
+      </article>
+
+      <article class="proj">
+        <h3>ALS progression modelling</h3>
+        <p>Ordinal logistic regression predicting ALS clinical stages, with SMOTE applied to correct severe class imbalance across underrepresented patient groups.</p>
+        <p class="proj-foot"><span class="tags">Ordinal regression · SMOTE</span><a href="https://github.com/FaridRash/Advance-Statistical-Learnin-Project" target="_blank" rel="noopener">Repository</a></p>
+      </article>
     </section>
 
-    <section id="projects" class="section bg-alt">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="project-list">
+    <section id="education" class="block">
+      <h2><span class="n">05</span>Education</h2>
 
-                <article class="project-row">
-                    <div class="project-head">
-                        <h3>Agentic RAG-Based Legal Question Answering System</h3>
-                        <span class="project-dates">Dec 2025 — Feb 2026</span>
-                    </div>
-                    <p class="tech-stack">Multi-agent RAG · OpenAI &amp; Llama · FAISS · RAGAS evaluation</p>
-                    <p>A multi-agent RAG system for legal question answering across multiple jurisdictions, using a supervisor–worker architecture to coordinate specialized retrieval agents. Achieved 0.867 context recall and 0.776 faithfulness via hybrid routing, validated with RAGAS.</p>
-                    <a href="https://github.com/MohammadAghaei1/Agentic-RAG" class="project-link" target="_blank" rel="noopener">View repository</a>
-                </article>
-
-                <article class="project-row">
-                    <div class="project-head">
-                        <h3>Conversational AI Workflow Automation Agent</h3>
-                        <span class="project-dates">Mar 2026 — Apr 2026</span>
-                    </div>
-                    <p class="tech-stack">Gemini 2.5 Flash · Function calling · Streamlit · Pydantic</p>
-                    <p>A conversational agent with strict function calling, achieving 100% execution reliability in workflow automation. Built as a scalable 4-layer system (UI, agent, state, tools) with custom multi-turn state management, including undo/redo without data loss.</p>
-                </article>
-
-                <article class="project-row">
-                    <div class="project-head">
-                        <h3>Meteorological Forecasting System</h3>
-                        <span class="project-dates">Jun 2025 — Aug 2025</span>
-                    </div>
-                    <p class="tech-stack">TensorFlow · XGBoost · Optuna · Entity embeddings</p>
-                    <p>A rainfall prediction system processing 145,000+ weather records. An ANN with entity embeddings and a tuned XGBoost model reached 84.7% accuracy and an F1-score of 0.66, outperforming Random Forest and logistic regression baselines.</p>
-                    <a href="https://github.com/Mahdi-Miri/Rain_Prediction-" class="project-link" target="_blank" rel="noopener">View repository</a>
-                </article>
-
-                <article class="project-row">
-                    <div class="project-head">
-                        <h3>Advanced Vehicle Price Valuation System</h3>
-                        <span class="project-dates">Aug 2025 — Sep 2025</span>
-                    </div>
-                    <p class="tech-stack">Stacking regressors · XGBoost · Random Forest</p>
-                    <p>A regression model to forecast used car prices, combining XGBoost, Random Forest, and linear regression in a stacking ensemble. Achieved an R² of 0.96 with a mean absolute error of 0.62.</p>
-                    <a href="https://github.com/MohammadAghaei1/Polynomial-Car-price-prediction-" class="project-link" target="_blank" rel="noopener">View repository</a>
-                </article>
-
-                <article class="project-row">
-                    <div class="project-head">
-                        <h3>Student Performance Analytics Dashboard</h3>
-                        <span class="project-dates">Jun 2024 — Aug 2024</span>
-                    </div>
-                    <p class="tech-stack">Streamlit · K-Means · PCA</p>
-                    <p>An interactive Streamlit application visualizing and predicting student academic outcomes, using K-Means clustering and PCA to segment students into behavioral groups for targeted intervention.</p>
-                    <a href="https://github.com/FaridRash/HW-SW-B" class="project-link" target="_blank" rel="noopener">View repository</a>
-                </article>
-
-                <article class="project-row">
-                    <div class="project-head">
-                        <h3>Predictive Modeling for ALS Progression</h3>
-                        <span class="project-dates">Apr 2025 — Nov 2025</span>
-                    </div>
-                    <p class="tech-stack">Ordinal logistic regression · SMOTE</p>
-                    <p>A statistical model predicting ALS clinical stages using ordinal logistic regression, with SMOTE applied to resolve severe class imbalance in underrepresented patient groups.</p>
-                    <a href="https://github.com/FaridRash/Advance-Statistical-Learnin-Project" class="project-link" target="_blank" rel="noopener">View repository</a>
-                </article>
-
-            </div>
+      <article class="entry">
+        <div class="entry-meta">
+          <span class="when">Sep 2023 — Feb 2027</span>
+          <span class="where">University of Naples Federico II<br><span class="loc">Naples</span></span>
         </div>
+        <div class="entry-body">
+          <h3>MSc Data Science</h3>
+          <ul>
+            <li>Current grade 100/110. Focus on AI safety, large language models, and causal inference.</li>
+            <li>Thesis in progress: <em>CausalTox: A Causal, Closed-Loop Framework for LLM Toxicity Testing.</em></li>
+            <li>Coursework: machine learning, deep learning, NLP, statistical learning, big data analytics.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta">
+          <span class="when">Oct 2025 — Jun 2026</span>
+          <span class="where">Apple Developer Academy<br><span class="loc">Naples</span></span>
+        </div>
+        <div class="entry-body">
+          <h3>iOS Machine Learning Engineer</h3>
+          <ul>
+            <li>On-device machine learning: computer vision and NLP classifiers running on iOS with Swift, SwiftUI and CoreML, with no server dependency.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta">
+          <span class="when">Jul 2019 — Aug 2022</span>
+          <span class="where">Azad University of Isfahan<br><span class="loc">Isfahan</span></span>
+        </div>
+        <div class="entry-body">
+          <h3>BSc Software Engineering</h3>
+          <ul>
+            <li>Capstone: a custom content management system in PHP and MySQL, built around architecture patterns and database efficiency.</li>
+          </ul>
+        </div>
+      </article>
     </section>
 
-    <footer id="contact">
-        <div class="container">
-            <h2 class="section-title">Get in touch</h2>
-            <p>Open to AI/ML engineering roles across Italy and the EU. Happy to talk about RAG architectures, agent systems, or AI safety research.</p>
-            <a href="mailto:mahdimiri7@gmail.com" class="email-link">mahdimiri7@gmail.com</a>
-            <ul class="social-row">
-                <li><a href="https://www.linkedin.com/in/mahdi-miri-dev/" target="_blank" rel="noopener">LinkedIn</a></li>
-                <li><a href="https://github.com/Mahdi-Miri" target="_blank" rel="noopener">GitHub</a></li>
-            </ul>
-            <p class="footer-bottom">&copy; 2026 Mahdi Miri.</p>
-        </div>
+    <footer class="end">
+      <h2>Let's talk</h2>
+      <p>Open to AI/ML engineering roles in Italy and across the EU. Happy to go deep on retrieval architectures, agent design, or model safety.</p>
+      <a class="email-big" href="mailto:mahdimiri7@gmail.com">mahdimiri7@gmail.com</a>
+      <p class="colophon">© 2026 Mahdi Miri</p>
     </footer>
 
-    <script src="script.js"></script>
+  </main>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
